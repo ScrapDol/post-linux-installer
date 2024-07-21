@@ -17,9 +17,8 @@ cd ..
 
 rm -rf yay
 
-
-#TODO: Добавить установку драйверов Nvidia
-
+# Установка Nvidia драйверов
+./drivers-install.sh
 
 
 
