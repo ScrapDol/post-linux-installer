@@ -20,6 +20,7 @@ rm -rf yay
 # Установка Nvidia драйвера
 ./drivers-install.sh
 
+./neovim-configurator.sh
 
 
 
