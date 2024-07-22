@@ -24,50 +24,15 @@ install_neovim() {
 
 create_config() {
     config_dir="$HOME/.config/nvim"
-    config_file="$config_dir/init.lua"
 
     mkdir -p "$config_dir"
-    touch "$config_file"
 
-    echo "Создание базовой конфигурации Neovim на Lua..."
-    cat << EOF > "$config_file"
+    echo "Создание базовой конфигурации Neovim..."
+	
 
-vim.opt.number = true
-vim.opt.relativenumber = true
-vim.opt.autoindent = true
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.smarttab = true
-vim.opt.softtabstop = 4
-vim.opt.mouse = 'a'
+	git clone https://github.com/ScrapDol/nvim-config.git ~/.config/nvim
 
--- Установка клавиши leader
-vim.g.mapleader = " "
-
-vim.api.nvim_set_keymap('n', '<leader>w', ':w<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>q', ':q!<CR>', { noremap = true, silent = true })
-
-
-vim.cmd('syntax enable')
-
-
-
-vim.opt.laststatus = 2
-
-
-
-
-
-vim.cmd [[packadd packer.nvim]]
-
-require('packer').startup(function(use)
-  use 'wbthomason/packer.nvim'
-
-end)
-
-EOF
-
-    echo "Базовая конфигурация Neovim на Lua создана в $config_file"
+    echo "Базовая конфигурация Neovim создана в $config_file"
 
 }
 
